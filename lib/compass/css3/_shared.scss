@@ -36,3 +36,12 @@
   @if $o       and $experimental-support-for-opera     { #{$property} :      -o-#{$value}; }
   @if $official                                        { #{$property} :         #{$value}; }
 }
+
+// Polyfill for no-ruby.
+@function -compass-list-size($list) {
+    $compassListSize: 0;
+    @each $i in $list {
+        $compassListSize: $compassListSize + 1;
+    }
+    @return $compassListSize;
+}
